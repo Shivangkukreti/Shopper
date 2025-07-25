@@ -1,0 +1,34 @@
+const express = require('express');
+const app = express();
+const cors = require('cors');
+require('dotenv').config();
+const mongoose = require('mongoose'); 
+const uri = process.env.MONGO_URL; 
+const PORT = process.env.PORT || 5000;
+let productroute=require('./routes/productroute.js')
+let userroute=require('./routes/userroute.js')
+main().then(() => {
+  console.log('done');
+}).catch((err) => {
+  console.log(err);
+});
+async function main() {
+  await mongoose.connect(uri); 
+}
+
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/product',productroute)
+app.use('/user',userroute)
+
+
+app.listen(PORT, () => {
+  console.log(`http://localhost:${PORT}/`);
+});
+
+app.get('/', (req, res) => {
+  res.send('working');
+});
+
