@@ -39,7 +39,8 @@ function Nav() {
               
                 <div className={"flex items-center gap-2 "+(isopen ? "block ml-5":" max-sm:hidden ")}>
                    {usertoken ? 
-                   <span onClick={()=>{
+                   <>
+                    <span onClick={()=>{
                     setusertoken(null)
                     setcart([])
                     localStorage.removeItem('usertoken')
@@ -47,6 +48,9 @@ function Nav() {
 
                     
                    }} className="rounded-2xl border  px-4 py-2 border-gray-500  ">Logout</span>
+                   <span onClick={()=>window.open('http://localhost:5174/listproduct')} className="">dashboard</span>
+                   </>
+                  
                    :<NavLink to={'/login'} >
                     <span className="rounded-2xl border  px-4 py-2 border-gray-500  ">Login</span></NavLink>} 
                     <div onClick={()=>nav('/cart')} className="relative">

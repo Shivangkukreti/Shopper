@@ -11,6 +11,7 @@ function Des() {
   let{usertoken,api,products}=useContext(Appcontext)
   let {id}=useParams()
   let [mypro,setmypro]=useState({})
+  
  useEffect(()=>{
         function getpro() {
             let x=products.find(e=>e.id==id)

@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import add from "../assets/Product_cart.svg";
+import add from "../assets/Product_Cart.svg";
 import all from "../assets/Product_list_icon.svg";
 
 
@@ -15,7 +15,7 @@ function Sidebar() {
                 <span className="font-medium text-gray-700 max-sm:hidden hover:text-orange-500 ">Add <span className="max-md:hidden">products</span></span>
           </div>
                 </NavLink>
-               <NavLink to={'/listproduct'}>
+               <NavLink  to={'/listproduct'}>
                <div className="flex  bg-gray-100  p-2 gap-2 m-2 cursor-pointer">
                 <img src={all} alt="" />
                 <span className="font-medium text-gray-700 max-sm:hidden hover:text-orange-500 ">All <span className="max-md:hidden">products</span></span>

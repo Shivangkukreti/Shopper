@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Exlucive from "../components/exclusive";
 import Footer from "../components/footer";
 import Hero from "../components/hero";
@@ -12,7 +12,12 @@ function Shop() {
 
     let data_product=products.slice(0,4).filter(any=>any.category=='women')
     let new_collection=products.slice(-8)
-
+  useEffect(() => {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
+}, []);
     return ( 
         <>
         <Hero></Hero>
