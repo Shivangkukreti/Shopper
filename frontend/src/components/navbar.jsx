@@ -48,7 +48,7 @@ function Nav() {
 
                     
                    }} className="rounded-2xl border  px-4 py-2 border-gray-500  ">Logout</span>
-                   <span onClick={()=>window.open('http://localhost:5174/listproduct')} className="">dashboard</span>
+                   <span onClick={()=>window.open('https://shopper-z6pk.vercel.app/listproduct')} className="">dashboard</span>
                    </>
                   
                    :<NavLink to={'/login'} >
